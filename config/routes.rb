@@ -2,8 +2,14 @@ Devise2::Application.routes.draw do
 
   get "home/index"
   devise_for :users
-
+  
   root :to => "home#index"
+
+  namespace :admin do  
+    resources :users, only: :show do
+      post :generate_new_password_email
+    end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

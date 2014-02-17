@@ -12,11 +12,11 @@
 
   <%if user_signed_in?%>
   <nav>
-  	<div><%= link_to "Sign Out", destroy_user_session_path %><h3>Signed In</h3></div>
+  	<div><%= link_to "Sign Out", "/users/sign_out", method: :delete %><h3>Signed In</h3></div>
   	<nav>
   		<% else %>
   		<nav>
-  	<div><%= link_to "/users/sign_up", "Sign In" %><h3>Signed In</h3></div>
+  	<div><%= link_to "Sign Out", "/users/sign_up" %><h3>Sign In</h3></div>
   	<nav>
 <% end %>
 <%= yield %>
